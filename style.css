@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
+
+:root{
+   /* Primary */
+    --DesaturatedRed: hsl(0, 36%, 70%);
+    --SoftRed: hsl(0, 93%, 68%);
+   /* Neutral */
+    --DarkGrayishRed: hsl(0, 6%, 24%);
+ /* Gradients */
+
+    --Linear1:linear-gradient(135deg, from hsl(0, 0%, 100%), to hsl(0, 100%, 98%)) ;
+    --Linear2:linear-gradient( 135deg, from hsl(0, 80%, 86%), to hsl(0, 74%, 74%));
+/* typo */
+     --fontSize:16px;
+     --fontFamily:'Josefin Sans', sans-serif;
+     --small:300;
+     --medium:400;
+     --large:600;
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: var(--fontFamily);
+    font-size: var(--fontSize);
+    background: url('./images/bg-pattern-desktop.svg'),
+    linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height:70vh;
+    
+}
+/* logo start */
+.logo-container{
+    /* padding: 1rem; */
+    margin:2rem
+}
+/* logo end */
+/* section with images start*/
+header{
+    padding: 1.3rem;
+    margin-left: 0.5rem;
+}
+
+.image-mobile{
+    width: 100vw;
+}
+.image-desktop{
+    display: none;
+}
+/* section with image end */
+/* main section info start  */
+main{
+    text-align: center;
+    padding: 1rem;
+}
+.soon{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.7rem;
+    font-family: var(--fontFamily);
+    color: var(--DarkGrayishRed);
+  
+}
+.pink{
+    color: var(--DesaturatedRed);
+    font-weight: var(--small);
+}
+.info{
+    color:var(--DesaturatedRed);
+    margin-bottom:1rem;
+}
+
+/* main section info end  */
+/* form start */
+.emailContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+  
+}
+form{
+    border: 1px solid var(--DesaturatedRed);
+    border-radius: 4rem;
+    border-right: none;
+}
+input{
+    border: none;
+    flex-grow:2;
+    background-color: transparent;
+
+}
+
+input:focus {
+    /* removing the input focus blue box. Put this on the form if you like. */
+    outline: none;
+  }
+  
+
+ button{
+    padding:0.5rem;
+    width:3.3rem;
+    border: none;
+    border-radius: 50%;
+    background: linear-gradient(90deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+    border: 0;
+    border-radius: 2rem;
+    box-shadow: 0 5px 20px 3px hsl(0, 80%, 86%);
+    margin-left: 7rem;
+    cursor: pointer;
+    
+    }
+
+.arrow{
+    padding: 0.2rem;
+} 
+.error{
+    position: absolute;
+    right: 5rem;
+    display: none;
+    
+}
+
+input[type=text]{
+    color: var(--DarkGrayishRed);
+    position: relative;
+    left: 1rem;
+    opacity: 90%;
+   
+    
+
+}
+.errorMessage{
+    display:none;
+    margin-top: 0.8rem;
+    margin-left: 1rem;
+    color: var(--SoftRed);
+}
+/* form end */
+
+/* media queries  for desktop*/
+@media only screen and (min-width:1024px) {
+    /* .container{
+        height: 100vh;
+    } */
+/* displat container */
+  .grid{
+    display: grid;
+    grid-template-columns: 2.5fr 1fr;
+    column-gap: 20px;
+
+  }
+  
+  .images{
+      order: 2;
+      height: 100%;
+  }
+
+  /* main start */
+  main{
+    order: 1;
+     /* padding: 6rem; */
+     text-align: start;
+     margin-left: 5rem;
+     margin-top: 2.5rem;
+}
+
+.soon{
+    margin-bottom: 1.5rem;
+    font-size: 3rem;
+    line-height: 4rem;
+}
+.info{
+    width: 30rem;
+   
+    line-height:1.4rem;
+    margin-bottom: 2rem;
+}
+ /* main end */
+ /* images start */
+    .image-mobile{
+      display: none;
+
+    }
+
+    .image-desktop{
+        display: flex;
+        height: 100vh;
+        position: relative;
+        bottom: 9rem;
+      
+        
+ 
+    }
+    /* images end */
+/* logo start */
+    .logo{
+      margin-left: 4rem;
+      margin-top: 1.5rem;
+    }
+    /* logo end */
+
+    /* form start  */
+   
+  form{
+      width: 80%;
+  }
+  
+    .error{
+        left: 40%;
+    }
+   
+    /* form end */
+}
